@@ -19,6 +19,41 @@
 
 **Kanban Crayon Board** is a full-stack web application designed to bring joy and efficiency to task management. Built as part of the **taraTask** suite, this project demonstrates modern web development practices while delivering a delightful user experience.
 
+### 🎯 Why I Built This
+
+Like many developers, I juggle multiple projects, ideas, and tasks daily. I tried various task management tools—Trello, Asana, Notion—but **none felt quite right**. They were either:
+- 🔒 Too rigid (can't customize the workflow)
+- 💰 Behind expensive paywalls (for basic features)
+- 🎨 Visually uninspiring (boring UI that doesn't spark joy)
+- 🐌 Slow and bloated (too many features I don't need)
+
+So I built **Kanban Crayon Board** as **my daily driver** for personal and professional task management. This isn't just a portfolio piece—it's the tool I use every day to:
+- 📝 Track my freelance projects
+- 💡 Organize side project ideas
+- 🎯 Plan learning goals and courses
+- ✅ Manage personal todos
+
+### 💭 Built for Real Use, Shared for Others
+
+What started as a personal productivity tool evolved into a full-featured Kanban system. I wanted to prove that you can build something **beautiful, functional, and performant** without enterprise budgets or massive teams.
+
+**The philosophy:**
+- ✨ **Visual delight** - Work should be enjoyable to look at
+- 🚀 **Speed first** - No loading spinners, instant feedback
+- 🎨 **Customizable** - Your workflow, your colors, your rules
+- 🔓 **Open source** - Take it, modify it, make it yours
+
+### 🌟 Make It Your Own
+
+This is **your** Kanban board now. Whether you're:
+- 👨‍💻 A developer tracking bugs and features
+- 🎨 A designer organizing client projects
+- 📚 A student planning assignments
+- 🏃 A freelancer managing multiple clients
+- 💼 A team lead coordinating sprints
+
+**Customize it to fit your workflow.** Change the colors, rename the columns, add features you need. The code is clean, well-documented, and ready for your personal touch.
+
 ### 🎯 Project Vision
 
 Traditional Kanban boards are functional but often feel sterile and uninspiring. Kanban Crayon Board breaks this mold by combining:
