@@ -89,7 +89,7 @@ php artisan migrate --seed
 
 This creates:
 - Database tables
-- Default user: `taratask@tarakreasi.com` / `tarakreasi`
+- Default user: `taratask@tarakreasi.com` / `password`
 
 **7. Link Storage**
 ```bash
