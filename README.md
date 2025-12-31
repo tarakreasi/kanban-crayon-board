@@ -1,329 +1,124 @@
-# taraTask Kanban Crayon Board
+# taraTask
 
-<div align="center">
+![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=flat&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-3.0-003B57?style=flat&logo=sqlite&logoColor=white)
 
-**A modern, multi-board Kanban application built with Laravel, React, and Inertia.js**
-
-*Beautiful glassmorphism design meets powerful productivity features*
-
-[![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel)](https://laravel.com)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-</div>
+> **"Built with the logic of a technician, the stability of an integrator, and the empathy of customer service."**
 
 ---
 
-## About Kanban Crayon Board
+## The Story Behind The Code
 
-**Kanban Crayon Board** is a full-stack web application designed to bring joy and efficiency to task management. Built as part of the **taraTask** suite, this project demonstrates modern web development practices while delivering a delightful user experience.
+Hi, I'm **Tri Wantoro**. This project is not just a collection of code; it is the culmination of an **18-year journey** through the layers of technology.
 
-### Why I Built This
+### The "Full-Stack" Evolution
+My path to software engineering is a continuous ascent through the layers of technology, giving me a unique 360 perspective:
 
-Like many developers, I juggle multiple projects, ideas, and tasks daily. I tried various task management tools—Trello, Asana, Notion—but none felt quite right. They were either:
+* **2007 - 2011: The Voice of the User (Customer Service)**
+    * *Lesson:* I learned exactly how users feel when technology fails. Empathy is my first debugging tool.
+    * *Impact on Code:* I design UI/UX to minimize user frustration, focusing on clear error messages and intuitive flows.
 
-- Too rigid and couldn't be customized to my workflow
-- Behind expensive paywalls for basic features I needed
-- Visually uninspiring with boring interfaces
-- Slow and bloated with too many features I didn't need
+* **2012 - 2017: The Logic of Hardware (Electronics Technician)**
+    * *Lesson:* Fixing circuit boards taught me strict logic. Input -> Process -> Output. If a component fails, the system dies.
+    * *Impact on Code:* I treat software components like electronic parts modular, testable, and precise.
 
-So I built **Kanban Crayon Board** as my daily driver for personal and professional task management. This isn't just a portfolio piece—it's the tool I use every day to:
+* **2017 - Present: The Stability of Systems (System Integrator)**
+    * *Status:* **Active Role.**
+    * *Lesson:* Handling Milestone VMS, Linux Servers, and Integration in critical environments (Airports/Enterprise).
+    * *Impact on Code:* I build with a "Production First" mindset. Security, logging, and server resource management are never afterthoughts.
 
-- Track my freelance projects
-- Organize side project ideas
-- Plan learning goals and courses
-- Manage personal todos
-
-### Built for Real Use, Shared for Others
-
-What started as a personal productivity tool evolved into a full-featured Kanban system. I wanted to prove that you can build something beautiful, functional, and performant without enterprise budgets or massive teams.
-
-**The philosophy:**
-
-- **Visual delight** - Work should be enjoyable to look at
-- **Speed first** - No loading spinners, instant feedback everywhere
-- **Customizable** - Your workflow, your colors, your rules
-- **Open source** - Take it, modify it, make it yours
-
-### Make It Your Own
-
-This is your Kanban board now. Whether you're a developer tracking bugs and features, a designer organizing client projects, a student planning assignments, a freelancer managing multiple clients, or a team lead coordinating sprints—customize it to fit your workflow.
-
-Change the colors, rename the columns, add features you need. The code is clean, well-documented, and ready for your personal touch.
-
-### Project Vision
-
-Traditional Kanban boards are functional but often feel sterile and uninspiring. Kanban Crayon Board breaks this mold by combining:
-
-- **Visual Delight**: Glassmorphism UI with vibrant gradients and smooth animations
-- **Productivity Power**: Advanced features like WIP limits, analytics, and activity tracking
-- **Developer Excellence**: Clean architecture, comprehensive testing, and thorough documentation
-
-This is not just a task manager—it's a showcase of what happens when design thinking meets technical craftsmanship.
+* **2022 - Present: The Builder (Software Engineer Pivot)**
+    * *Mission:* While maintaining critical systems by day, I am bridging my experience to build robust web solutions using **Laravel & React** by night.
 
 ---
 
-## Screenshots
+## Project Overview
 
-### Dashboard - Overview & Analytics
-![Dashboard](docs/screenshots/dashboard.png)
+**taraTask** is a Kanban board application designed to streamline personal and professional task management with visual clarity and system reliability.
 
-### Kanban Board - Task Management
-![Kanban Board](docs/screenshots/kanban.png)
+I built this project to bridge the gap I often see in the field: software that works technically but fails practically. Leveraging my background in **Product Thinking** and **System Integration**, this application focuses on reliability and user ease-of-use without unnecessary complexity.
 
-### My Tasks - Unified View
-![My Tasks](docs/screenshots/my-tasks.png)
-
----
-
-## Key Features
-
-### Multi-Board System
-Organize your work across multiple boards, each with its own custom theme color that dynamically applies throughout the interface.
-
-- Create unlimited boards
-- Custom theme colors per board
-- Easy board switching from sidebar
-- Inline board creation and deletion
-
-### Powerful Kanban Management
-An intuitive 4-column workflow that adapts to your needs:
-
-- **To Do → In Progress → In Review → Done**
-- Drag-and-drop tasks between columns
-- Quick-add tasks from column headers
-- Inline editing with double-click
-- Optimistic UI updates for instant feedback
-
-### Rich Task Management
-Every task is more than just a title:
-
-- **Priorities**: High, Medium, Low (with color coding)
-- **Due dates**: Never miss a deadline
-- **Descriptions**: Add context with markdown support
-- **Tags/Labels**: Categorize and filter tasks
-- **Comments**: Collaborate with threaded discussions
-- **Activity log**: Track all changes automatically
-
-### Advanced Dashboard
-Get a bird's eye view of all your work:
-
-- Summary statistics across all boards
-- Board grid with quick access and progress indicators
-- Upcoming deadlines in the next 7 days
-- Recent activity feed across all boards
-- Overdue tasks alert panel
-
-### Board Settings & Customization
-Fine-tune each board to perfection:
-
-- Custom board descriptions
-- Theme color picker with 8 presets plus custom colors
-- WIP (Work In Progress) limits per column
-- Board deletion with safety confirmation
-
-### My Tasks - Unified View
-See all your tasks across all boards in one place:
-
-- Advanced filtering by board, status, priority, and tags
-- Multiple sort options: created date, due date, priority, title
-- Pagination support for large task lists
-- Empty state handling with helpful prompts
-
-### Analytics & Insights
-Data-driven productivity:
-
-- **Cycle Time**: Average time from start to completion
-- **Throughput**: Tasks completed per week
-- **WIP Count**: Current work in progress
-- **Completion Stats**: Weekly completion tracking
-
-### Modern UI/UX
-Beautiful and functional:
-
-- Glassmorphism design with vibrant gradients
-- Dark mode support throughout
-- Smooth Framer Motion animations
-- Responsive design for all screen sizes
-- Fast, SPA-like navigation with Inertia.js
+### Key Features
+* **Multi-Board Architecture:** Organize different aspects of life (Work, Personal, Learning) in isolated environments.
+* **Visual Task Management:** Drag-and-drop interface that provides immediate visual feedback, mimicking physical interaction.
+* **Systematic Productivity:** Features like WIP (Work In Progress) limits designed to prevent cognitive overload.
 
 ---
 
-## Tech Stack
+## Tech Stack & Engineering Decisions
 
-### Backend
-- **Laravel 12** - Modern PHP framework
-- **SQLite** - Lightweight database (easily swappable)
-- **Laravel Sanctum** - Session-based authentication
-- **Inertia.js** - Modern monolith architecture
+| Component | Tech Selection | Engineering Context (The "Why") |
+|-----------|---------------|---------------------------------|
+| **Backend** | **Laravel 12** | Chosen for its robust ecosystem and strict structure, mirroring the Standard Operating Procedures (SOP) I use in system integration. |
+| **Frontend** | **React 19** | React's component-based architecture reminds me of modular electronics easy to isolate, test, and replace. |
+| **Styling** | **Tailwind CSS 4** | Utility-first CSS allows for rapid UI development without sacrificing consistency. |
+| **Database** | **SQLite** | Lightweight and reliable, perfect for portable deployments while maintaining strict relational integrity. |
+| **Infrastructure** | **Linux (Ubuntu)** | Developed on a Linux environment to ensure seamless deployment and server compatibility (permissions, cron, etc). |
 
-### Frontend
-- **React 19** - UI library with latest features
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **Framer Motion** - Smooth animations
-- **@dnd-kit** - Drag and drop functionality
-- **Vite** - Lightning-fast build tool
+### Technical Highlight: From Hardware to Software
+**Challenge:** Handling real-time state updates across a Kanban board without race conditions.
 
-### Development & Quality
-- **PHPUnit** - 73 passing unit tests
-- **Test Factories** - Realistic test data
-- **Comprehensive Documentation** - 10+ markdown guides
-- **Git Version Control** - Clean commit history
+**Solution (The RCA Approach):**
+Applying my **Root Cause Analysis** mindset:
+1.  **Isolate:** Separated the drag-and-drop logic into a dedicated component using `@dnd-kit`.
+2.  **Trace:** Implemented optimistic UI updates to ensure the interface feels responsive immediately (Input), while confirming with the server asynchronously (Process).
+3.  **Resolve:** Used database transactions to ensure that if a task move fails on the server, the UI reverts instantly, maintaining data integrity (Output).
 
 ---
 
-## Installation
+## Installation & Setup
 
-### Prerequisites
-- PHP 8.2+
-- Composer
-- Node.js 18+
-- NPM or Yarn
-
-### Quick Start
+Since I am accustomed to Linux CLI environments, here is the standard setup to get this running on your local machine:
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/tarakreasi/kanban-crayon-board.git
+
+# 2. Navigate to directory
 cd kanban-crayon-board
 
-# Install PHP dependencies
+# 3. Install Dependencies
 composer install
-
-# Install JavaScript dependencies
 npm install
 
-# Create environment file
+# 4. Environment Setup
 cp .env.example .env
+# Don't forget to configure your database in .env file, or use default SQLite
 
-# Generate application key
+# 5. Generate Key & Migrate
 php artisan key:generate
+php artisan migrate --seed
 
-# Run database migrations
-php artisan migrate
-
-# Seed database (optional - creates sample data)
-php artisan db:seed
-
-# Build frontend assets
-npm run build
-
-# Start the development server
-php artisan serve
-```
-
-Visit `http://localhost:8000` in your browser.
-
-### Default Login
-- **Email**: tarakreasi@tarakreasi.com
-- **Password**: password
-
----
-
-## Development
-
-### Running in Development Mode
-
-```bash
-# Terminal 1: Laravel server
+# 6. Run Development Server
+# Terminal 1
 php artisan serve
 
-# Terminal 2: Vite dev server (hot reload)
+# Terminal 2
 npm run dev
-```
 
-### Running Tests
-
-```bash
-# Run all tests
-php artisan test
-
-# Run specific test file
-php artisan test --filter=TaskManagementTest
-
-# Run with coverage
-php artisan test --coverage
-```
-
-### Database Management
-
-```bash
-# Fresh migration (caution: deletes all data)
-php artisan migrate:fresh
-
-# Fresh migration with seeding
-php artisan migrate:fresh --seed
-
-# Rollback last migration
-php artisan migrate:rollback
+# Or use the local startup script if available
+# ./local-serve.sh
 ```
 
 ---
 
-## Documentation
+## Retrospective: What I Learned
+"Software is just hardware that you can change instantly. But the discipline to maintain it should remain the same."
 
-This project includes comprehensive documentation:
-
-- **[Features Guide](docs/FEATURES.md)** - Detailed feature explanations
-- **[User Guide](docs/USER_GUIDE.md)** - End-user manual
-- **[Developer Guide](docs/DEVELOPER_GUIDE.md)** - Technical documentation
-- **[Architecture](docs/ARCHITECTURE.md)** - System design and patterns
-- **[API Reference](docs/API_REFERENCE.md)** - API endpoint documentation
-- **[Testing Guide](docs/TESTING.md)** - Testing strategy and coverage
-- **[Changelog](docs/CHANGELOG.md)** - Version history
-- **[Roadmap](docs/ROADMAP.md)** - Future plans
+* **Simplify First:** Deleting unnecessary code is harder than writing new code.
+* **Production Mindset:** Running on localhost is easy. Preparing for a Linux VPS deployment requires understanding permissions and environment variables.
+* **User-Centricity:** A feature is only "done" when the user can use it without reading a manual a lesson from my Customer Service days.
 
 ---
 
-## Contributing
+## Connect with Me
+I am currently a System Integrator actively pivoting to a professional Fullstack Engineering role. I am ready to bring the reliability of a senior technician and the creativity of a developer to your team.
 
-Contributions are welcome! Here's how you can help:
+* **LinkedIn:** [linkedin.com/in/twantoro](https://linkedin.com/in/twantoro)
+* **GitHub:** [github.com/tarakreasi](https://github.com/tarakreasi)
+* **Email:** ajarsinau@gmail.com
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-Please ensure:
-- Code follows Laravel and React best practices
-- All tests pass (`php artisan test`)
-- New features include tests
-- Documentation is updated
-
----
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## Acknowledgments
-
-Built with love using:
-- Laravel framework by Taylor Otwell
-- React by Meta
-- Tailwind CSS by Adam Wathan
-- And many other amazing open source projects
-
----
-
-## Contact
-
-**Tri Wantoro** (tarakreasi)
-- Email: tarakreasi@tarakreasi.com
-- GitHub: [@tarakreasi](https://github.com/tarakreasi)
-- Project: [kanban-crayon-board](https://github.com/tarakreasi/kanban-crayon-board)
-
----
-
-<div align="center">
-
-**Made with passion for productivity**
-
-*Star this repo if you find it useful!*
-
-</div>
+**"Ajarsinau"** means "Learning to Learn". It represents my commitment to continuous evolution from hardware to software, from technician to engineer.

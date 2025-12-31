@@ -1,109 +1,87 @@
-# API Reference
+# Internal API Specification
 
-This document provides a technical overview of the API endpoints used by the **Kanban Crayon Board** frontend. All endpoints require authentication via session cookies (Laravel Breeze).
-
-## Base Configuration
-- **Host**: Localhost (Development) / Production URL
-- **Format**: All requests should include `Accept: application/json` headers.
-- **Authentication**: Stateful session (Web)
+> **Architecture:** Hybrid Monolith (Inertia.js + Laravel)
+> **Protocol:** Inter-Process Communication (via HTTP/Session)
+> **Authentication:** `web` guard (Cookie/Session)
 
 ---
 
-## 📋 Tasks
+## 1. Page Loads (Inertia Responses)
+*These endpoints deliver the Application State (HTML + Props).*
 
-### `GET /kanban`
-Fetches all tasks, boards, and tags for the active user.
-- **Response**: Inertia Page Object containing `tasks`, `boards`, `activeBoard`, and `tags`.
-
-### `POST /tasks`
-Create a new task.
-- **Payload**:
-  - `title`: string (required)
-  - `description`: string (optional)
-  - `priority`: enum (`low`, `medium`, `high`)
-  - `status`: enum (`todo`, `in-progress`, `in-review`, `done`)
-  - `board_id`: integer (required)
-  - `due_date`: string (ISO date, optional)
-
-### `PUT /tasks/{task}`
-Update an existing task or move its status.
-- **Payload**: Fields same as `POST /tasks`. Use for partial updates (e.g., status change).
-
-### `DELETE /tasks/{task}`
-Permanently delete a task.
-
-### `GET /tasks/{task}/activities`
-Fetch the activity history for a specific task.
+### 1.1 Kanban Board (Main Interface)
+**Endpoint:** `GET /kanban`
+**Response:** Inertia Page Component (`Kanban`)
+**Props:**
+```json
+{
+  "tasks": ["Array of Task objects"],
+  "boards": ["Array of Board objects"],
+  "activeBoard": ["Current Board object"],
+  "tags": ["Array of Tag objects"]
+}
+```
 
 ---
 
-## 🎨 Boards
+## 2. State Mutators (Action Endpoints)
+*These endpoints modify system state. They typically redirect back with optimistic updates.*
 
-### `POST /boards`
-Create a new board.
-- **Payload**:
-  - `title`: string (required)
-  - `theme_color`: string (Hex color, e.g., `#4A90E2`)
+### 2.1 Task Operations
 
-### `PUT /boards/{board}`
-Update board details (e.g., theme color or WIP limits).
-- **Payload**:
-  - `title`: string
-  - `theme_color`: string
-  - `wip_limits`: JSON object (optional)
+#### Create Task
+**Endpoint:** `POST /tasks`
+**Payload:**
+```json
+{
+  "title": "Fix Login Bug",         // Required | String
+  "status": "todo",                 // Required | Enum: [todo, in-progress, in-review, done]
+  "priority": "high",               // Required | Enum: [low, medium, high]
+  "board_id": 5,                    // Optional | Integer (Defaults to first board)
+  "description": "Details...",      // Optional | String
+  "due_date": "2025-12-31"          // Optional | Date
+}
+```
 
-### `DELETE /boards/{board}`
-Delete a board. **Note**: Board must be empty of tasks.
+#### Update Task (Move / Edit)
+**Endpoint:** `PUT /tasks/{id}`
+**Usage:** Drag-and-drop persistence or content editing.
+**Payload:** (Partial updates accepted)
+```json
+{
+  "status": "done",
+  "priority": "low"
+}
+```
+*Note:* Moving to `in-progress` sets `started_at`; moving to `done` sets `completed_at`.
 
----
+#### Delete Task
+**Endpoint:** `DELETE /tasks/{id}`
+**Response:** Redirect (302) or 204 No Content (if JSON requested).
 
-## 🏷️ Tags
+### 2.2 Board Operations
 
-### `POST /tags`
-Create a new board-specific tag.
-- **Payload**:
-  - `board_id`: integer (required)
-  - `name`: string (required)
-  - `color`: string (Hex color)
+#### Create Board
+**Endpoint:** `POST /boards`
+**Payload:** `{"title": "New Board", "theme_color": "#FF0000"}`
 
-### `DELETE /tags/{tag}`
-Delete a tag.
-
----
-
-## 💬 Comments
-
-### `GET /tasks/{task}/comments`
-Fetch all comments for a specific task.
-
-### `POST /tasks/{task}/comments`
-Post a new comment.
-- **Payload**:
-  - `body`: string (required)
-
-### `DELETE /comments/{comment}`
-Delete a comment.
+#### Delete Board
+**Endpoint:** `DELETE /boards/{id}`
+**Constraint:** Cannot delete the last remaining board.
 
 ---
 
-## 📊 Analytics
+## 3. AJAX Data Endpoints
+*Pure JSON endpoints for dynamic client-side fetching.*
 
-### `GET /analytics`
-Fetch board-specific metrics.
-- **Parameters**: `board_id` (Query param)
-- **Response**:
-  - `avg_cycle_time`: float (days)
-  - `throughput`: integer (tasks completed in last 7 days)
-  - `wip_count`: integer (current tasks in progress)
-  - `total_completed`: integer
+### 3.1 Task Activities
+**Endpoint:** `GET /tasks/{id}/activities`
+**Response:** JSON Array of activity logs.
 
 ---
 
-## 👤 Profile
+## 4. Error Handling
 
-### `PATCH /profile`
-Update user profile or upload avatar.
-- **Payload**:
-  - `name`: string
-  - `email`: string
-  - `avatar`: file (optional, multipart/form-data)
+**Validation (422):** Returns Inertia error bag (shared props).
+**Authorization (403):** Returns `abort(403)` if accessing unauthorized board/task.
+**Authentication (401):** Redirects to `/login`.
