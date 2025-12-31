@@ -217,8 +217,8 @@ php artisan serve
 Visit `http://localhost:8000` in your browser.
 
 ### Default Login
-- **Email**: taratask@tarakreasi.com
-- **Password**: tarakreasi
+- **Email**: tarakreasi@tarakreasi.com
+- **Password**: password
 
 ---
 
@@ -314,7 +314,7 @@ Built with love using:
 ## Contact
 
 **Tri Wantoro** (tarakreasi)
-- Email: ajarsinau@gmail.com
+- Email: tarakreasi@tarakreasi.com
 - GitHub: [@tarakreasi](https://github.com/tarakreasi)
 - Project: [kanban-crayon-board](https://github.com/tarakreasi/kanban-crayon-board)
 

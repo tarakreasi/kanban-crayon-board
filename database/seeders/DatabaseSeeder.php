@@ -20,16 +20,8 @@ class DatabaseSeeder extends Seeder
 
         $users = [
             [
-                'name' => 'ajarsinau',
-                'email' => 'ajarsinau@gmail.com',
-            ],
-            [
-                'name' => 'twantoro07',
-                'email' => 'twantoro07@gmail.com',
-            ],
-            [
-                'name' => 'taratask',
-                'email' => 'taratask@tarakreasi.com',
+                'name' => 'tarakreasi',
+                'email' => 'tarakreasi@tarakreasi.com',
             ]
         ];
 
