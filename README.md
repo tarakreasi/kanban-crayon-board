@@ -75,10 +75,10 @@ Since I am accustomed to Linux CLI environments, here is the standard setup to g
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/tarakreasi/kanban-crayon-board.git
+git clone https://github.com/tarakreasi/taratask.git
 
 # 2. Navigate to directory
-cd kanban-crayon-board
+cd taratask
 
 # 3. Install Dependencies
 composer install
